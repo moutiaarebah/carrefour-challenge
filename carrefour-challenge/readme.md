@@ -9,21 +9,21 @@ windows & Linux: (JDK 1.8 est pré requis)
  
 >mvn clean install -DskipTests=true (pour eviter le test)
  
- 
-deux archives jar sont creer aprés la compilation <<carrefour-challenge-0.0.1.jar>> et 
+
+deux archives jar sont créer aprés la compilation <<carrefour-challenge-0.0.1.jar>> et 
 <<carrefour-challenge-0.0.1-jar-with-dependencies.jar>>
-utiliser le deuxieme jar par ce qu'il contient les dependances (log4j,common-cli ...)
+utiliser le deuxième  jar par ce qu'il contient les dépendances (log4j,common-cli ...)
 
 		 
 ## parametres
 
-l'odre des parametres n'est pas important
+l'odre des paramètres n'est pas important
 
--d,--date  : date of the transaction file a traiter au format yyyyMMdd (obligatoire)
+-d,--date  : date of the transaction file à traiter au format yyyyMMdd (obligatoire)
 
--i,--input : path ou les donnee existe (obligatoire)
+-i,--input : path des fichiers (obligatoire)
 
--o,--output: path ou les donnee seront stoker  (optionnelle) valeur par defaut $HOME/out)
+-o,--output: path de resultat  (optionnelle) valeur par defaut $HOME/out)
 
 -t,--task  : numero de tache a executer 1 ou 7
 	1 => top_100_ventes_<ID_MAGASIN>_YYYYMMDD.data , 
