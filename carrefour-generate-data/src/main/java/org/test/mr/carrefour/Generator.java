@@ -25,9 +25,10 @@ public class Generator {
 	public static List<Date> days ;
 
 	/**
-	 * usage:
+	 * 
 	 *@param -np,--numberOfProduct <arg>   number of product per magasin
 	 *@param -ns,--numberOfStore <arg>     number of store
+	 *@param -nt,--numberofTransaction <arg>   nombre de transaction
 	 *@param -p,--path <arg>               input path
 	 * @throws Exception
 	 */

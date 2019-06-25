@@ -12,6 +12,7 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.log4j.Logger;
 import org.lansrod.mra.extractor.TopCAJ7Extractor;
+import org.lansrod.mra.extractor.TopCAJ7Extractor;
 import org.lansrod.mra.extractor.TopVenteExtractor;
 
 public class Manager {
@@ -76,7 +77,7 @@ public class Manager {
 			break;
 		case 7:
 			//calcule de top 100 chiffre d'affaire par magasin sur 7 jours a partir de la date de parametre
-			TopCAJ7Extractor.getTop100J7(inputPath, outputPath, date);
+			TopCAJ7Extractor.getTop100CAJ7(inputPath, outputPath, date);
 			break;
 		default:
 			log.error("invalid task number");
