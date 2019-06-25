@@ -1,18 +1,18 @@
 # Carrefour Test
-> ce test contient le developpement des points 1 et 7
+> ce test contient le développement des points 1 et 7.
 
 ## Compilation
 
-windows & Linux:
+windows & Linux: (JDK 1.8 est pré requis)
 
 >mvn clean install 
  
 >mvn clean install -DskipTests=true (pour eviter le test)
  
  
-deux archives jar sont creer apres la compilation <<carrefour-challenge-0.0.1.jar>> et 
+deux archives jar sont creer aprés la compilation <<carrefour-challenge-0.0.1.jar>> et 
 <<carrefour-challenge-0.0.1-jar-with-dependencies.jar>>
-utiliser le deuxieme jar par ce qu'il contient les dependances (log4j,junit ...)
+utiliser le deuxieme jar par ce qu'il contient les dependances (log4j,common-cli ...)
 
 		 
 ## parametres
