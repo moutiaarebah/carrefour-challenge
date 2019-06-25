@@ -1,8 +1,6 @@
 import static org.junit.Assert.assertEquals;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -14,7 +12,7 @@ public class TopCaTest {
 	
 	
 	@Test
-    public void shouldExtracTopVentet() throws ParseException, Exception {
+    public void shouldExtracTopCA() throws ParseException, Exception {
 		ClassLoader classLoader = getClass().getClassLoader();
 		File f = new File(classLoader.getResource("transactions_20190629.data").getFile());
 		TopCAJ7Extractor.getTop100J7(f.getParent(),

@@ -11,7 +11,7 @@ import org.lansrod.mra.extractor.TopVenteExtractor;
 public class TopVenteTest {
 	
 	@Test
-    public void shouldExtracTopVentet() throws ParseException, Exception {
+    public void shouldExtracTopVente() throws ParseException, Exception {
 		
 		ClassLoader classLoader = getClass().getClassLoader();
 		File f = new File(classLoader.getResource("transactions_20190629.data").getFile());
