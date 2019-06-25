@@ -6,7 +6,7 @@
 windows & Linux:
 
 >mvn clean install 
-or 
+ 
 >mvn clean install -DskipTests=true (pour eviter le test)
  
 ```   
