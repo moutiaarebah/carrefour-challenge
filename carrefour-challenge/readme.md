@@ -12,9 +12,7 @@ windows & Linux:
 ```   
 deux archive jar sont creer apres la compilation <<carrefour-challenge-0.0.1.jar>> et 
 <<carrefour-challenge-0.0.1-jar-with-dependencies.jar>>
-
 utiliser le deuxieme jar par ce qu'il contient les dependances (log4j,junit ...)
- 
 ```
 
 ##requirement
