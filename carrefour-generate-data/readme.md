@@ -1,32 +1,28 @@
 # Carrefour Test
-> ce test contient le developpement des points 1 et 7
+>ce projet permet la génération des données aléatoire pour simuler la volumétrie.
 
 ## Compilation
 
-windows X & Linux:
+windows & Linux: (JDK 1.8 est pré requis)
 
-```mvn clean install 
-   
-la compilation cree deux archive jar carrefour-challenge-0.0.1.jar et 
-carrefour-challenge-0.0.1-jar-with-dependencies.jar
-
-utiliser le deuxieme jar par ce qu'il contient les dependances
+>mvn clean install 
  
-```
-
-##requirement
-
-```
-	JDK 1.8
-		
-```
+>mvn clean install -DskipTests=true (pour eviter le test)
+ 
+ 
+deux archives jar sont creer aprés la compilation <<carrefour-generate-data-0.0.1.jar>> et 
+<<carrefour-generate-data-0.0.1-jar-with-dependencies.jar>>
+utiliser le deuxieme jar par ce qu'il contient les dependances.
+ 
 
 ## parametres
 
-* [-p-,--path  : number of product per magasin ]
-* [-ns,--numberOfStore :  number of store]
-* [-nt,--numberofTransaction :  nombre de transaction]
-* [-np,--numberOfProduct <arg>   number of product per magasin]
+ordre n'est pas imporant
+
+-p-,--path  : number of product per magasin ]
+-ns,--numberOfStore :  number of store]
+-nt,--numberofTransaction :  nombre de transaction]
+-np,--numberOfProduct  number of product per magasin]
  
  
 ## Usage example
