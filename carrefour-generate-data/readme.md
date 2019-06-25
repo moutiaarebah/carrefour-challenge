@@ -19,10 +19,10 @@ utiliser le deuxieme jar par ce qu'il contient les dependances.
 
 ordre n'est pas imporant
 
--p-,--path  : number of product per magasin ]
--ns,--numberOfStore :  number of store]
--nt,--numberofTransaction :  nombre de transaction]
--np,--numberOfProduct  number of product per magasin]
+-p-,--path  : path ou stocker les données générer
+-ns,--numberOfStore :  nombre des magasins
+-nt,--numberofTransaction :  nombre des transactions par fichier
+-np,--numberOfProduct : nombre des produits par magasin
  
  
 ## Usage example
@@ -30,9 +30,7 @@ ordre n'est pas imporant
 > java -jar carrefour-generate-data-0.0.1-SNAPSHOT-jar-with-dependencies.jar -ns 100 -np 100 
 -nt 100 -p /home/lansrod/data
 
-	
 OR
 	
 > java -jar carrefour-generate-data-0.0.1-SNAPSHOT-jar-with-dependencies.jar --numberOfStore 100
  --numberOfProduct 100 --numberofTransaction 100 --path /home/lansrod/data
-
