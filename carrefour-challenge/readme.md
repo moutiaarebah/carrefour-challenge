@@ -10,13 +10,10 @@ windows & Linux:
 >mvn clean install -DskipTests=true (pour eviter le test)
  
  
-deux archive jar sont creer apres la compilation <<carrefour-challenge-0.0.1.jar>> et 
+deux archives jar sont creer apres la compilation <<carrefour-challenge-0.0.1.jar>> et 
 <<carrefour-challenge-0.0.1-jar-with-dependencies.jar>>
 utiliser le deuxieme jar par ce qu'il contient les dependances (log4j,junit ...)
 
-##requirement
-
-JDK 1.8
 		 
 ## parametres
 
