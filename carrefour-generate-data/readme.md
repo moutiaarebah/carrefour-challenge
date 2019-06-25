@@ -10,16 +10,15 @@ windows & Linux: (JDK 1.8 est pré requis)
 >mvn clean install -DskipTests=true (pour eviter le test)
  
  
-deux archives jar sont creer aprés la compilation <<carrefour-generate-data-0.0.1.jar>> et 
+deux archives jar sont créer aprés la compilation <<carrefour-generate-data-0.0.1.jar>> et 
 <<carrefour-generate-data-0.0.1-jar-with-dependencies.jar>>
-utiliser le deuxieme jar par ce qu'il contient les dependances.
- 
+utiliser le deuxième jar par ce qu'il contient les dépendances. 
 
 ## parametres
 
 ordre n'est pas imporant
 
--p-,--path  : path ou stocker les données générer
+-p-,--path  : path de resultat
 -ns,--numberOfStore :  nombre des magasins
 -nt,--numberofTransaction :  nombre des transactions par fichier
 -np,--numberOfProduct : nombre des produits par magasin
