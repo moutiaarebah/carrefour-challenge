@@ -1,20 +1,16 @@
 package org.lansrod.mra.reader;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Collections;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.stream.Stream;
-
-import org.apache.log4j.Logger;
 
 public class TransactionReader {
 
-	public static Map<String, Map<Integer, Integer>> getTransactionData(File transactionFile) throws IOException {
+	public static Map<String, Map<Integer, Integer>> getBataByMagasinID(File transactionFile) throws IOException {
 		
 		Map<String,Map<Integer,Integer>> data = new HashMap<String, Map<Integer,Integer>>();
 		
@@ -28,17 +24,13 @@ public class TransactionReader {
 			Integer qt = Integer.parseInt(values[4]);
 			if(data.get(id_mag)!=null) {
 				if(data.get(id_mag).get(id_prod)!=null)
-	
 					 //si le magasin existe deja dans le map et le produit existe on somme la quantite
-					 
 					data.get(id_mag).put(id_prod,qt+data.get(id_mag).get(id_prod));
-					
+				else 
 					// si le magasin existe deja dans le map et le produit n'existe pas  on ajoute un nouvelle entree
-					 
-				else data.get(id_mag).put(id_prod, qt);
+					data.get(id_mag).put(id_prod, qt);
 			}
 			else {
-	
 				 //si le magasin n'existe pas on ajoute une entree
 				data.put(id_mag, new HashMap(){{ put(id_prod, qt); }});
 			}
@@ -49,6 +41,4 @@ public class TransactionReader {
 		
 		return data;
 	}
-
-
 }

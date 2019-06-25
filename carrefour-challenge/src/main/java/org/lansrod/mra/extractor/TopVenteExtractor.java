@@ -14,10 +14,10 @@ import org.lansrod.mra.Config;
 import org.lansrod.mra.reader.TransactionReader;
 
 
-public class Top100VenteExtractor {
+public class TopVenteExtractor {
 
 
-	public static final Logger log = Logger.getLogger(Top100VenteExtractor.class);
+	public static final Logger log = Logger.getLogger(TopVenteExtractor.class);
 	
 	/**
 	 * map contenant les donnee du fichier de transaction sous la forme <mag_id,<prod_id,qt>> 
@@ -26,7 +26,7 @@ public class Top100VenteExtractor {
 	public static Map<String,Map<Integer,Integer>> data = new HashMap<String, Map<Integer,Integer>>();
 
 	
-	public static void getTop100Vente(String inputPath , String outputPath , Date date ) throws Exception {
+	public static void getTop100(String inputPath , String outputPath , Date date ) throws Exception {
 		
 		//creation de fichier de transcation transcation_<date>.data
 		File transactionFile = new File(
@@ -35,20 +35,16 @@ public class Top100VenteExtractor {
 		log.info("processing file " +transactionFile.getPath() + "...");
 		
  
-		data = TransactionReader.getTransactionData(transactionFile);
+		data = TransactionReader.getBataByMagasinID(transactionFile);
 		
 		log.info("writing data in " + outputPath + "..." );
 		 
 		for (Entry<String, Map<Integer, Integer>> entry : data.entrySet()) {
 			String id_mag = entry.getKey();
 			
-			File folder = new File(outputPath + "/" + Config.dateFormat.format(date));
-
-			if (!folder.exists())
-				folder.mkdirs();
 			
 			//ouvrir un stream vers un fichier de la forme outputPath/top_100_vantes_<id_mag>_<yyyyMMdd>.data
-			FileWriter fw = new  FileWriter(folder.getPath()+ "/top_100_ventes_"+id_mag+"_"+date+".data");
+			FileWriter fw = new  FileWriter(outputPath+ "/top_100_ventes_"+id_mag+"_"+Config.dateFormat.format(date)+".data");
 			
 			entry.getValue().entrySet().stream().sorted(
 					//trie descendant par valeur (quantité)
@@ -63,7 +59,9 @@ public class Top100VenteExtractor {
 					log.error(e.getMessage());
 				}
 			});
+			//s'assurer que le contenu du buffer est ecrit dans la distination et le vider pour liberer la meroire
 			fw.flush();
+			//fermer le stream
 			fw.close();
 		}
 	}	

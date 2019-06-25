@@ -11,13 +11,13 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.log4j.Logger;
-import org.lansrod.mra.extractor.Top100CAJ7Extractor;
-import org.lansrod.mra.extractor.Top100VenteExtractor;
+import org.lansrod.mra.extractor.TopCAJ7Extractor;
+import org.lansrod.mra.extractor.TopVenteExtractor;
 
 public class Manager {
 
 
-	public static Logger log = Logger.getLogger(Top100CAJ7Extractor.class);
+	public static Logger log = Logger.getLogger(TopCAJ7Extractor.class);
 
 	/**
 	 * chemin du fichier de transaction et referentiel produit 
@@ -72,11 +72,11 @@ public class Manager {
 		switch (taskNumber) {
 		case 1:
 			//calcule de top 100 vente par magasin pour la date de parametre
-			Top100VenteExtractor.getTop100Vente(inputPath, outputPath, date);
+			TopVenteExtractor.getTop100(inputPath, outputPath, date);
 			break;
 		case 7:
 			//calcule de top 100 chiffre d'affaire par magasin sur 7 jours a partir de la date de parametre
-			Top100CAJ7Extractor.getTop100CAJ7(inputPath, outputPath, date);
+			TopCAJ7Extractor.getTop100J7(inputPath, outputPath, date);
 			break;
 		default:
 			log.error("invalid task number");
@@ -85,7 +85,7 @@ public class Manager {
 		//temp de fin
 		long end  = System.currentTimeMillis();
 		//calcule de temp d'execution
-		log.info("task completed in " + (end-start)/1000 + "seconds");
+		log.info("task completed in " + (end-start)/1000 + " seconds");
 
 	}
 

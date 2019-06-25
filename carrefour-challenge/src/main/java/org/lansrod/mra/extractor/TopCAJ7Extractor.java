@@ -18,9 +18,9 @@ import org.lansrod.mra.Config;
 import org.lansrod.mra.reader.ReferentielProdReader;
 import org.lansrod.mra.reader.TransactionReader;
 
-public class Top100CAJ7Extractor {
+public class TopCAJ7Extractor {
 
-	public static Logger log = Logger.getLogger(Top100CAJ7Extractor.class);
+	public static Logger log = Logger.getLogger(TopCAJ7Extractor.class);
 	
 	/**
 	 * map qui contenant les donnees d'un fichier de transaction liberer a la fin de
@@ -45,18 +45,18 @@ public class Top100CAJ7Extractor {
 	 */
 	public static List<File> trxFiles;
 
-	public static void getTop100CAJ7(String inputPath , String outputPath , Date date ) throws Exception {
+	public static void getTop100J7(String inputPath , String outputPath , Date date ) throws Exception {
 
 		getTransactionFiles(inputPath,date);
 
-		for (File trxFile : trxFiles) {
+		for (File transactionFile : trxFiles) {
 			
-			log.info("processing file :" + trxFile.getName());
+			log.info("processing file :" + transactionFile.getName());
 
-			String trxDate = trxFile.getName().split("_")[1].replaceAll(".data", "");
+			String trxDate = transactionFile.getName().split("_")[1].replaceAll(".data", "");
 			
 			//alimenter le map de transaction
-			dataTrx = TransactionReader.getTransactionData(trxFile);
+			dataTrx = TransactionReader.getBataByMagasinID(transactionFile);
 
 			for (Entry<String, Map<Integer, Integer>> entry : dataTrx.entrySet()) {
 				
@@ -109,7 +109,6 @@ public class Top100CAJ7Extractor {
 				dataCA.clear();
 			}
 			//vider le map de transaction
-
 			dataTrx.clear();
 		}
 
@@ -125,7 +124,9 @@ public class Top100CAJ7Extractor {
 			cal.setTime(date);
 			cal.add(Calendar.DATE, i);
 			String path = inputPath + "/" + Config.PREFIX_TRX + Config.dateFormat.format(cal.getTime()) + Config.FILE_EXT;
-			trxFiles.add(new File(path));
+			File transactionFile = new File(path);
+			if(transactionFile.exists())
+				trxFiles.add(new File(path));
 		}
 		
 		return trxFiles;
