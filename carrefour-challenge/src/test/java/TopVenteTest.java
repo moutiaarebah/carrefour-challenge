@@ -1,6 +1,8 @@
 import static org.junit.Assert.assertEquals;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -21,9 +23,20 @@ public class TopVenteTest {
 		File expected  = new File(classLoader.getResource("top_vente_expected.data").getFile());
 		File generated = new File(classLoader
 				.getResource("top_100_ventes_6776b618-bf03-450c-9400-cdf78e768062_20190629.data").getFile());
-		assertEquals("error!", 
-					 FileUtils.readFileToString(expected, "utf-8").trim().replace("\n",""), 
-					 FileUtils.readFileToString(generated, "utf-8").trim().replace("\n","")); 
+//		assertEquals("error!", 
+//					 FileUtils.readFileToString(expected, "utf-8").trim(), 
+//					 FileUtils.readFileToString(generated, "utf-8").trim()); 
+		BufferedReader br1 = new BufferedReader(new FileReader(expected));
+		BufferedReader br2 = new BufferedReader(new FileReader(generated));
+
+		String line_expected;
+		String line_generated;
+
+		while ((line_expected = br1.readLine()) != null) {
+			line_generated = br2.readLine();
+			assertEquals(line_expected.trim(), line_generated.trim());
+
+		}
 		
 	}
 

@@ -40,30 +40,7 @@ public class Manager {
 	 */
 	public static int  taskNumber;
 
-	/**
-	 * 
-	 * @param -d,--date
-	 *            <arg> date of the transaction file ( format : yyyyMMdd , required)
-	 * @param -i,--input
-	 *            <arg> input file path (required)
-	 * @param -o,--output
-	 *            <arg> output file (optional) default value $HOME/out ,
-	 * @param -t,--task
-	 *            <arg> Number of task (1 => top_100_ventes_<ID_MAGASIN>_YYYYMMDD.data ,
-	 *            						7 =>top_100_ca_<ID_MAGASIN>_YYYYMMDD-J7.data)
-	 * @throws IOException
-	 * @throws ParseException
-	 */
 
-	/**
-	 * example  
-	 * 
-	 * java -jar  <jarname>	-i <path> -d <date> -o <path>  -t <num>
-	 *  or 
-	 * java -jar  <jarname>	--input <path> --date <date> --output <path>  --task <num>
-	 * 
-	 * ordre n'est pas important
-	 */
 	public static void main(String[] args) throws Exception {
 		
 		// temp de depart

@@ -5,14 +5,18 @@
 
 windows & Linux: (JDK 1.8 est pré requis)
 
->mvn clean install 
+>mvn Test  :executer les test
+
+>mvn clean install  (compilation et execution de test)
  
->mvn clean install -DskipTests=true (pour eviter le test)
+>mvn clean install -DskipTests=true (pour éviter le test)
  
 
 deux archives jar sont créer aprés la compilation <<carrefour-challenge-0.0.1.jar>> et 
 <<carrefour-challenge-0.0.1-jar-with-dependencies.jar>>
 utiliser le deuxième  jar par ce qu'il contient les dépendances (log4j,common-cli ...)
+
+avant d'exécuter le projet merci de regarder  le projet carrefour-generate-data pour préparer les données
 
 		 
 ## parametres
@@ -29,7 +33,6 @@ l'odre des paramètres n'est pas important
 	1 => top_100_ventes_<ID_MAGASIN>_YYYYMMDD.data , 
 	7 =>top_100_ca_<ID_MAGASIN>_YYYYMMDD-J7.data (obligatoire);
  
-
 ## Usage example
 
 >java -jar carrefour-challenge-0.0.1-jar-with-dependencies.jar --task 7 --input /home/lansrod/data 
