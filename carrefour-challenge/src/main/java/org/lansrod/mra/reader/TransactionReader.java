@@ -33,6 +33,7 @@ public class TransactionReader {
 			else {
 				 //si le magasin n'existe pas on ajoute une entree
 				data.put(id_mag, new HashMap(){{ put(id_prod, qt); }});
+				System.out.println("fff");
 			}
 		});
 		
